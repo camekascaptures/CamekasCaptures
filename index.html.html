@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cameka's Captures</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+
+    <style>
+        /* Basic CSS for menu styling */
+        body {
+            font-family: 'Quintessential', cursive;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 0; 
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 50px;
+            align-items: center;
+            z-index: 1; 
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        li a {
+            display: block;
+            color: #40e2e2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #f3f3f3;
+        }
+
+        main {
+            padding-top: 50px; /* Add space for the fixed menu */
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .home-section {
+            height: 100vh; /* Set height to 100vh */
+            background-image: url("C:/Users/Amaya/Downloads/CC/CC Webi/CC Front Page Image.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px; 
+            margin-top: -50px; /* Pulls the section up behind the menu */
+        }
+
+        .title {
+            color: #ffffff; /* Change title color to white */
+            font-size: 36px; /* Adjust title size */
+            margin-bottom: 20px; /* Space below title */
+        }
+
+        .home-content {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: center; /* Center text inside the box */
+        }
+
+        .additional-section {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px; 
+            text-align: center;
+        }
+
+        .blank-section {
+            background-color: #ffffff; 
+            height: 100px; /* Smaller height */
+            width: 100%; 
+            margin-top: 20px; 
+            box-sizing: border-box; 
+            display: flex;
+            justify-content: center; /* Center the content */
+            align-items: center; /* Align items vertically */
+            text-align: center;
+            padding: 10px; /* Add some padding */
+        }
+
+        .blank-section p {
+            margin: 0; /* Remove default margin */
+            line-height: 1.5; /* Space between lines */
+        }
+
+        .additional-section a {
+            color: #40e2e2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .additional-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#About">About</a></li>
+  <li><a href="#Shop">Shop</a></li>
+  <li><a href="#Blog">Blog</a></li>
+  <li><a href="#Contact">Contact</a></li>
+</ul>
+
+<main>
+  <div class="home-section">
+      <h2 class="title">Cameka's Captures</h2>
+      <div class="home-content">
+          <p>"Where The Vision Meets The Moment"</p>
+          <p>"Let us tell your story—one frame at a time"</p>
+      </div>
+  </div>
+
+  <div class="additional-section">
+      <h2>Photos & Memories</h2>
+      <p>Our mission at Cameka's Captures is to create beautiful moments and create lasting memories with passion and creativity that will be a part of your life’s journey.</p>
+      <a href="About.html">Read More</a>
+  </div>
+
+  <div class="blank-section">
+      <p>Thank you for visiting our site! Stay tuned for more updates.</p>
+  </div>
+
+  <div id="About" style="display:none;">
+      <h2>About</h2>
+      <a href="About.html">summarie</a><br>
+  </div>
+
+  <div id="Shop" style="display:none;">
+      <h2>Shop</h2> 
+  </div>
+
+  <div id="Blog" style="display:none;">
+      <h2>Blog</h2>
+      <a href="note_1.html">note 1</a><br>
+  </div>
+
+  <div id="Contact" style="display:none;">
+      <h2>Contact</h2>
+      <p>(Gmailname)@gmail.com</p> 
+  </div>
+</main>
+
+<script>
+// JavaScript for showing/hiding content based on menu clicks
+document.querySelectorAll('ul li a').forEach(item => {
+    item.addEventListener('click', event => {
+        event.preventDefault();
+        let target = event.target.getAttribute('href').substring(1);
+        document.querySelectorAll('main div').forEach(div => {
+            div.style.display = 'none';
+        });
+        document.getElementById(target).style.display = 'block';
+    });
+});
+
+// Ensure the home section is visible by default
+document.getElementById('home').style.display = 'block';
+</script>
+
+</body>
+</html>
